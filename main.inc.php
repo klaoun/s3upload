@@ -6,6 +6,7 @@ Description: Piwigo plugin that uploads gallery photos to an AWS S3 storage acco
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=691
 Author: Micah Wittman
 Author URI: http://wittman.org
+Has Settings: true
 */
 
 /**
@@ -27,15 +28,6 @@ define('S3UPLOAD_DIR', PHPWG_ROOT_PATH . PWG_LOCAL_DIR . 's3upload/');
 define('S3UPLOAD_VERSION', '1.0');
 define('S3UPLOAD_ABS_ROOT_PATH', realpath(PHPWG_ROOT_PATH));
 define('S3UPLOAD_ROOT_URL', get_root_url());;
-
-//Check for known compatible Piwigo version
-if( version_compare(PHPWG_VERSION, '2.5.0', '=') || version_compare(PHPWG_VERSION, '2.5.1', '=') ) {
-	//Compatible
-	define('S3UPLOAD_COMPATIBLE', true);
-}else{
-	//Not known compatible
-	define('S3UPLOAD_COMPATIBLE', false);
-}
 
 // +-----------------------------------------------------------------------+
 // | Add event handlers                                                    |
